@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/launchDetailsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/missionImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="@string/mission_patch"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardView.Flat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/row_margin"
+                app:contentPadding="@dimen/launch_card_content_padding">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/labelBarrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="end"
+                        app:constraint_referenced_ids="launchDateLabel, launchSiteLabel, launchSuccessLabel" />
+
+                    <ImageView
+                        android:id="@+id/missionPatchImage"
+                        android:layout_width="76dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/mission_patch"
+                        android:paddingEnd="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlSymmetry"
+                        tools:src="@drawable/ic_launcher_background" />
+
+                    <TextView
+                        android:id="@+id/launchDateLabel"
+                        style="@style/RowLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/launch_date"
+                        app:layout_constraintStart_toEndOf="@id/missionPatchImage"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/launchDateValue"
+                        style="@style/RowValue"
+                        android:layout_marginTop="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/labelBarrier"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="March 23, 1019" />
+
+                    <TextView
+                        android:id="@+id/launchSiteLabel"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/launch_site"
+                        app:layout_constraintStart_toEndOf="@id/missionPatchImage"
+                        app:layout_constraintTop_toTopOf="@id/launchSiteValue" />
+
+                    <TextView
+                        android:id="@+id/launchSiteValue"
+                        style="@style/RowValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/labelBarrier"
+                        app:layout_constraintTop_toBottomOf="@id/launchDateValue"
+                        tools:text="Kwajalein Atoll Omelek Island" />
+
+                    <TextView
+                        android:id="@+id/launchSuccessLabel"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/launch_success"
+                        app:layout_constraintStart_toEndOf="@id/missionPatchImage"
+                        app:layout_constraintTop_toTopOf="@id/launchSuccessValue" />
+
+                    <TextView
+                        android:id="@+id/launchSuccessValue"
+                        style="@style/RowValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/labelBarrier"
+                        app:layout_constraintTop_toBottomOf="@id/launchSiteValue"
+                        tools:text="Success" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/descriptionBarrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="launchSuccessLabel, launchSuccessValue, missionPatchImage" />
+
+                    <TextView
+                        android:id="@+id/launchDetailsLabel"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/row_margin"
+                        android:text="@string/launch_details"
+                        app:layout_constraintTop_toBottomOf="@id/descriptionBarrier" />
+
+                    <TextView
+                        android:id="@+id/launchDetailsValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/row_margin"
+                        android:lineSpacingMultiplier="1.2"
+                        app:layout_constraintTop_toBottomOf="@id/launchDetailsLabel"
+                        tools:text="Successful first stage burn and transition to second stage, maximum altitude 289 km, Premature engine shutdown at T+7 min 30 s, Failed to reach orbit, Failed to recover first stage" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardView.Flat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/row_margin"
+                app:contentPadding="@dimen/launch_card_content_padding">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/rocketName"
+                        style="@style/TextAppearance.AppCompat.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Falcon 9" />
+
+                    <TextView
+                        android:id="@+id/rocketDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/row_margin"
+                        android:lineSpacingMultiplier="1.2"
+                        app:layout_constraintTop_toBottomOf="@id/rocketName"
+                        tools:text="Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit." />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/centerBarrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <TextView
+                        android:id="@+id/heightLabel"
+                        style="@style/RowLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rocket_height"
+                        app:layout_constraintEnd_toEndOf="@id/centerBarrier"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rocketDescription" />
+
+                    <TextView
+                        android:id="@+id/heightValue"
+                        style="@style/RowValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/centerBarrier"
+                        app:layout_constraintTop_toBottomOf="@id/rocketDescription"
+                        tools:text="70 metres" />
+
+                    <TextView
+                        android:id="@+id/diameterLabel"
+                        style="@style/RowLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rocket_diameter"
+                        app:layout_constraintEnd_toEndOf="@id/centerBarrier"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/heightValue" />
+
+                    <TextView
+                        android:id="@+id/diameterValue"
+                        style="@style/RowValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/centerBarrier"
+                        app:layout_constraintTop_toBottomOf="@id/heightValue"
+                        tools:text="3.7 metres" />
+
+                    <TextView
+                        android:id="@+id/engineLabel"
+                        style="@style/RowLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rocket_engines"
+                        app:layout_constraintEnd_toEndOf="@id/centerBarrier"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/diameterValue" />
+
+                    <TextView
+                        android:id="@+id/engineValue"
+                        style="@style/RowValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/centerBarrier"
+                        app:layout_constraintTop_toBottomOf="@id/diameterValue"
+                        tools:text="8" />
+
+                    <Button
+                        android:id="@+id/moreInfoButton"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/label_value_margin"
+                        android:text="@string/rocket_more_info"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/engineValue" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/item_loading_container"
+        tools:visibility="gone" />
+</RelativeLayout>

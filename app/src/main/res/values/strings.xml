@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">SpaceX Demo</string>
+
+    <string name="launches">SpaceX Launches</string>
+
+    <string name="sort">Sort</string>
+    <string name="sort_launch_date">Launch Date</string>
+    <string name="sort_mission_name">Mission Name</string>
+
+    <string name="filter">Filter</string>
+    <string name="filter_all">All</string>
+    <string name="filter_successful_launches">Successful Launches</string>
+    <string name="filter_unsuccessful_launches">Unsuccessful Launches</string>
+
+    <string name="launch_successful">Successful</string>
+    <string name="launch_unsuccessful">Unsuccessful</string>
+    <string name="launch_success_unknown">TBD</string>
+
+    <string name="error_description">There was an error loading your request.</string>
+    <string name="error_routing">There was an error opening the url.</string>
+    <string name="retry">Retry</string>
+
+    <string name="mission_patch">Mission Patch</string>
+    <string name="more_rocket_details">More Rocket Details</string>
+    <string name="vehicle">Vehicle</string>
+
+    <string name="launch_date">Launch Date</string>
+    <string name="launch_site">Launch Site</string>
+    <string name="launch_success">Success</string>
+    <string name="launch_details">Details</string>
+
+    <string name="rocket_height">Height</string>
+    <string name="rocket_diameter">Diameter</string>
+    <string name="rocket_engines">Engines</string>
+    <string name="rocket_more_info">More Info</string>
+    <string name="meters">%s meters</string>
+</resources>
